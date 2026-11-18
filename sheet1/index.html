@@ -8,7 +8,7 @@
 </head>
 <body>
   <a-scene
-    mindar-image="imageTargetSrc: ./targets.mind; maxTrack: 4; filterMinCF: 0.0005; filterBeta: 0.02;"
+    mindar-image="imageTargetSrc: ./targets.mind; maxTrack: 4; filterMinCF: 0.0001; filterBeta: 0.05; warmupTolerance: 5; missTolerance: 10;"
     color-space="sRGB"
     renderer="colorManagement: true, physicallyCorrectLights"
     vr-mode-ui="enabled: false"
