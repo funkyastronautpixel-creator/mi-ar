@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.5/dist/mindar-image-aframe.prod.js"></script>
+</head>
+<body>
+  <a-scene
+    mindar-image="imageTargetSrc: ./targets.mind; maxTrack: 4; filterMinCF: 0.001; filterBeta: 0.01;"
+    color-space="sRGB"
+    renderer="colorManagement: true, physicallyCorrectLights"
+    vr-mode-ui="enabled: false"
+    device-orientation-permission-ui="enabled: false">
+
+    <a-assets>
+      <a-asset-item id="m1" src="./modelo1.glb"></a-asset-item>
+      <a-asset-item id="m2" src="./modelo2.glb"></a-asset-item>
+      <a-asset-item id="m3" src="./modelo3.glb"></a-asset-item>
+      <a-asset-item id="m4" src="./modelo4.glb"></a-asset-item>
+    </a-assets>
+
+    <a-camera position="0 0 0" look-controls="enabled: false"></a-camera>
+
+    <!-- Sticker 1 -->
+    <a-entity mindar-image-target="targetIndex: 0">
+      <a-gltf-model src="#m1" position="0 0 0" scale="0.5 0.5 0.5" rotation="90 0 0" animation-mixer></a-gltf-model>
+    </a-entity>
+
+    <!-- Sticker 2 -->
+    <a-entity mindar-image-target="targetIndex: 1">
+      <a-gltf-model src="#m2" position="0 0 0" scale="0.5 0.5 0.5" rotation="90 0 0" animation-mixer></a-gltf-model>
+    </a-entity>
+
+    <!-- Sticker 3 -->
+    <a-entity mindar-image-target="targetIndex: 2">
+      <a-gltf-model src="#m3" position="0 0 0" scale="0.5 0.5 0.5" rotation="90 0 0" animation-mixer></a-gltf-model>
+    </a-entity>
+
+    <!-- Sticker 4 -->
+    <a-entity mindar-image-target="targetIndex: 3">
+      <a-gltf-model src="#m4" position="0 0 0" scale="0.5 0.5 0.5" rotation="90 0 0" animation-mixer></a-gltf-model>
+    </a-entity>
+
+  </a-scene>
+</body>
+</html>
